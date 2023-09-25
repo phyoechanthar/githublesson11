@@ -1,0 +1,161 @@
+:root{
+	--primary-color:steelblue;
+	--secondary-color: tomato;
+	--box-shadow:0 3px 5px rgba(0,0,0,0.3);
+}
+*{
+	box-sizing:border-box;
+}
+
+body{
+	font-family:sans-serif;
+	height:100vh;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.container{
+	width:450px;
+}
+
+h2{
+	text-align:center;
+}
+
+.balance-box{
+	width:100%;
+	background:#f4f4f4;
+	padding:10px 0;
+	margin:0;
+	text-align:center;
+	box-shadow:var(--box-shadow);
+	border-bottom:1px solid #555;
+}
+.expense-box{
+	background-color:#f4f4f4;
+	box-shadow:var(--box-shadow);
+	padding:20px;
+	margin:0;
+
+	display:flex;
+	justify-content:space-between;	
+}
+
+.expense-box > div{
+	flex:1;
+	text-align:center;
+}
+
+.expense-box > div:first-of-type{
+	border-right:1px solid #555;
+}
+
+.tran-container{
+	background-color:#f4f4f4;
+	padding:10px;
+
+	position:relative;
+}
+
+.open-btn{
+	outline:none;
+}
+h3{
+	border-bottom:1px solid #aaa;
+	padding-bottom:10px;
+	margin:30px 0 20px;
+}
+
+.form-group{
+	margin:10px 0;
+}
+input[type='text'],input[type='date']{
+	width:100%;
+	font-size:17px;
+	border:1px solid #ddd;
+	border-radius:3px;
+	outline:0;
+	padding:10px;
+}
+
+#remark{
+	display:block;
+	width:100%;
+	outline:none;
+	resize:none;
+}
+
+.btn{
+	width:100%;
+	background-color:var(--primary-color);
+	color:#fff;
+	font-size:17px;
+	box-shadow:var(--box-shadow);
+	border:none;
+	padding:10px;
+	margin:10px 0;
+	cursor:pointer;
+}
+.history-box{
+	width:300px;
+	box-shadow:2px 2px 5px rgba(0,0,0,0.3);
+	padding:0 5px;
+
+	position:absolute;
+	left:0;
+	top:7%;
+
+	z-index:-1;
+	opacity:0;
+
+	transition:all .5s;
+}
+
+.history-box.show{
+	left:100%;
+	opacity:1;
+	z-index:1;
+}
+
+.list-group{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+.list-group .list-group-item{
+	background-color:#fff;
+	color:#333;
+	box-shadow:0 3px 3px rgba(0,0,0,0.3);
+	padding:10px;
+
+	display:flex;
+	justify-content:space-between;
+}
+
+.list-group .list-group-item.inc{
+	border-bottom:5px solid var(--primary-color);
+}
+
+.list-group .list-group-item.dec{
+	border-bottom:5px solid var(--secondary-color);
+}
+
+.delete-btn{
+	background-color:var(--secondary-color);
+	color:#fff;
+	padding:2px 5px;
+	border:0;
+	outline:none;
+	cursor:pointer;
+	opacity:0.7;
+}
+
+.list-group-item:hover .delete-btn{
+	opacity:1;
+}
+
+.history-list{
+	height:300px;
+	overflow-y:scroll;
+}
